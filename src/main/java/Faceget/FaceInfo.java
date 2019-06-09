@@ -27,10 +27,18 @@ public class FaceInfo
             String base=pics.get(i);
 
             HashMap<String, String> options = new HashMap<String, String>();
-            options.put("face_field", "age");//获取年龄
-            options.put("face_field", "gender");//获取性别
+            options.put("face_field", "age,gender");//获取年龄
             JSONObject res = client.detect(base,"BASE64", options);
+
+            //输出对应api返回信息
             System.out.println(res.toString());
+
+            //api获取限制
+            try {
+                Thread.sleep(1200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             Object result=res.get("result");
             String resultstr=result.toString();

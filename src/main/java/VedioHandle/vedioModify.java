@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class vedioModify
 {
@@ -28,8 +29,10 @@ public class vedioModify
             Thread.sleep(50);//50毫秒刷新一次图像
         }
     }
-    public void vedioprocess(String vediopath,int time)
+    public ArrayList<String> vedioprocess(String vediopath,int time)
     {
+        ArrayList<String> picpathes=new ArrayList<String>();
+
         int index=0;//图片序号
         Frame frame = null;
         FFmpegFrameGrabber ffg = new FFmpegFrameGrabber(vediopath);//视频帧处理
@@ -38,16 +41,17 @@ public class vedioModify
             int ftp = ffg.getLengthInFrames();//总帧数
             double t=ftp / ffg.getFrameRate() / time;
             System.out.println(ffg.grabKeyFrame());
-            System.out.println("时长 " + t +"分钟");
+            System.out.println("时长 " + t);
 
             BufferedImage bImage = null;
             System.out.println("开始运行视频提取帧，耗时较长");
 
             //截取每秒末尾的图片
-            while (index <= t) {
+            while (index < t-1) {
                 //文件绝对路径+名字
-                String fileName = vediopath.substring(0,vediopath.lastIndexOf("/")) + "/img_" + index + ".jpg";
+                String fileName = vediopath.substring(0,vediopath.lastIndexOf("/")) + "/img_"+"aaa"+index+ ".jpg";
                 System.out.println(fileName);
+                picpathes.add(fileName);
                 //文件储存对象
                File outPut = new File(fileName);
                 //获取帧
@@ -63,6 +67,9 @@ public class vedioModify
             ffg.stop();
         } catch (IOException E) {
             System.out.println(E.toString());
+        }
+        finally{
+            return picpathes;
         }
     }
 

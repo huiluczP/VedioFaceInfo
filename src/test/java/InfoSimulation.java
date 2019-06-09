@@ -8,7 +8,7 @@ import java.util.List;
 
 public class InfoSimulation {
     public static void main(String []args){
-        List<Person> persons1=new ArrayList<>();
+        List<Person> persons1=new ArrayList<Person>();
         Person person1=new Person();
         person1.setAge("20");
         person1.setGender("female");
@@ -16,7 +16,7 @@ public class InfoSimulation {
         person1.setPlacey(20);
         persons1.add(person1);
 
-        List<Person> persons2=new ArrayList<>();
+        List<Person> persons2=new ArrayList<Person>();
         Person person2=new Person();
         person2.setAge("20");
         person2.setGender("female");
@@ -24,7 +24,7 @@ public class InfoSimulation {
         person2.setPlacey(25);
         persons2.add(person2);
 
-        List<Person> persons3=new ArrayList<>();
+        List<Person> persons3=new ArrayList<Person>();
         Person person3=new Person();
         person3.setAge("20");
         person3.setGender("female");
@@ -32,7 +32,7 @@ public class InfoSimulation {
         person3.setPlacey(30);
         persons3.add(person3);
 
-        List<PersonPerTime> ppts=new ArrayList<>();
+        List<PersonPerTime> ppts=new ArrayList<PersonPerTime>();
         PersonPerTime ppt1 = new PersonPerTime();
         ppt1.setTime(0);
         ppt1.setPersons(persons1);
