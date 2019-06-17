@@ -28,6 +28,7 @@ public class FaceInfo
 
             HashMap<String, String> options = new HashMap<String, String>();
             options.put("face_field", "age,gender");//获取年龄
+            options.put("max_face_num", "10");
             JSONObject res = client.detect(base,"BASE64", options);
 
             //输出对应api返回信息

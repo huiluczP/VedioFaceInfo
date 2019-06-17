@@ -40,12 +40,14 @@ public class DistanceCal {
     //faceWidth 人脸像素宽
     //oldFaceWidth 年龄对应实际宽
     //通过facelist类来获取
-    double coefficient=30;
+    double coefficient=28;
 
     //通过年龄分段返回人脸实际长度
     private double calOldFaceLength(double age){
-        if (age<20)
-            return 20;
+        if (age<15)
+            return 13;
+        else if(age<20)
+            return 18;
         else
             return 20;
     }

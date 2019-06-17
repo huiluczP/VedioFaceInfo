@@ -49,7 +49,7 @@ public class vedioModify
             //截取每秒末尾的图片
             while (index < t-1) {
                 //文件绝对路径+名字
-                String fileName = vediopath.substring(0,vediopath.lastIndexOf("/")) + "/img_"+"aaa"+index+ ".jpg";
+                String fileName = vediopath.substring(0,vediopath.lastIndexOf("/")) + "/img_"+"bbb"+index+ ".jpg";
                 System.out.println(fileName);
                 picpathes.add(fileName);
                 //文件储存对象

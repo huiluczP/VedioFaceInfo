@@ -21,7 +21,7 @@ public class WholeTest {
         //间隔时间
         int pertime=1;
 
-        String pic="E:/学校/作业/创新实践/test2.jpg";
+        String pic="E:/学校/作业/创新实践/test9.jpg";
         opencv_core.IplImage Image = cvLoadImage(pic,1);
         if(Image!=null)
             System.out.println(Image.width()+","+Image.height());

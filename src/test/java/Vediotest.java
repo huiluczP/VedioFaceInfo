@@ -6,6 +6,8 @@ import PutoutInfo.InfoOutputAdapter;
 import PutoutInfo.WalkWayInfo;
 import VedioHandle.vedioModify;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class Vediotest {
@@ -13,7 +15,8 @@ public class Vediotest {
         int time=1;//时间间隔(秒数)
 
         vedioModify vm=new vedioModify();
-        String vediopath="E:/学校/作业/创新实践/vediotest.mp4";
+        String vediopath="E:/学校/作业/创新实践/test3.mp4";
+        String textpath="E:/学校/作业/创新实践/output.txt";
         ArrayList<String> picpathes=vm.vedioprocess(vediopath,time);//处理视频
 
         //存放base码
@@ -40,6 +43,10 @@ public class Vediotest {
         try {
             String result= JSONChange.objToJson(info);
             System.out.println(result);
+            BufferedWriter bw =null;
+            bw=new BufferedWriter(new FileWriter(textpath));
+            bw.write(result);
+            bw.close();
         }
         catch(Exception ex)
         {
